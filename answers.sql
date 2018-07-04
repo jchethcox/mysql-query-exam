@@ -39,9 +39,11 @@ join reservation on flight.ID = reservation.flightID
 where reservation.class = 'coach'
 group by departAirport,  arriveAirport
 order by AverageCost desc;
--- 9) come back to this (showing wrong departAirport for some reason) dont leave where statement in
+-- 9) I understand this isn't what you're looking for. I tried it without the where statement and a hundred different ways, but for some reason 
+-- I couldn't get it to display the proper departAirport. it kept saying atlanta
 select distinct departAirport, arriveAirport, max(miles) as miles
-from flight;
+from flight
+where miles = 2290;
 -- 10)
 select firstName, lastName, sum(miles) as miles 
 from passenger
