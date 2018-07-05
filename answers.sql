@@ -41,9 +41,9 @@ group by departAirport,  arriveAirport
 order by AverageCost desc;
 -- 9) I understand this isn't what you're looking for. I tried it without the where statement and a hundred different ways, but for some reason 
 -- I couldn't get it to display the proper departAirport. it kept saying atlanta
-select distinct departAirport, arriveAirport, max(miles) as miles
+select  departAirport, arriveAirport, miles
 from flight
-where miles = 2290;
+order by miles desc limit 1;
 -- 10)
 select firstName, lastName, sum(miles) as miles 
 from passenger
